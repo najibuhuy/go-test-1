@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container_docker
+    restart: always
+    environment:
+      POSTGRES_USER: najibalyasyfi
+      POSTGRES_PASSWORD: A!s3d4f5g6h7j8k9l0
+      POSTGRES_DB: bank-db-test
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: go_fiber_app
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+
+volumes:
+  postgres_data:
