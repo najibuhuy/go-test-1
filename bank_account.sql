@@ -5,3 +5,4 @@ CREATE TABLE bank_accounts (
     phone TEXT UNIQUE NOT NULL,
     bank_no TEXT UNIQUE NOT NULL,
     balance NUMERIC DEFAULT 0.0
+)
