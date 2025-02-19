@@ -9,4 +9,4 @@
 1. Create a .env file in the root directory with your database credentials.
 2. docker-compose -f deployment.yml up --build -d
 3. Run query in bank_account.sql to create a table in database
-4. Happy test it 
+4. You can test it in postman, import "test golang.postman_collection.json"
